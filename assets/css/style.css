@@ -76,6 +76,40 @@ main .motos{
 height: 10em;
 }
 
+/*intento del media query de tablet*/
+@media all and (min-width: 576px){
+    .container_principal{
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr 1fr ;
+        grid-template-areas: 
+        "nav nav"
+        "menu main"
+        "footer footer"
+        ;
+}
+
+main .motos{
+    grid-template-columns: 1fr 1fr;
+}
+
+nav .icon{
+    display: none;
+}
+
+nav .nav_secciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: space-between;/*Intente de todo profesor pero no logre separarlos y mandarlos al fondo para hacer el tipo menu en la tablet :(.*/
+    list-style-type: none;
+}
+
+span{
+    color: white;
+}
+
+}
+
 /*NOTE QUE EL MEDIA QUERY SE ESTA ACTIVANDO A PARTIR DE 992px*/
 @media all and (min-width: 992px){
     .container_principal{
@@ -109,31 +143,3 @@ height: 10em;
     }
 }
 
-/*intento del media query de tablet*/
-@media all and (min-width: 576px){
-    .container_principal{
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 1fr 1fr ;
-        grid-template-areas: 
-        "nav nav"
-        "menu main"
-        "footer footer"
-        ;
-}
-
-main .motos{
-    grid-template-columns: 1fr 1fr;
-}
-
-nav .icon{
-    display: none;
-}
-
-nav .nav_secciones{
-    display: flex;
-    flex-direction: row;
-/*Intente de todo profesor pero no logre separarlos y mandarlos al fondo para hacer el tipo menu en la tablet :(.*/
-    list-style-type: none;
-}
-
-}
