@@ -18,15 +18,14 @@
     "footer"
     ;
     text-align: center;
+    background-color: #0e3b9b;
 }
-
-
 
 nav{
     grid-area: nav;
     background-color: #015798;
     display: flex;
-    justify-content: space-between;
+    justify-content:start ;
     color: white;
 }
 
@@ -41,12 +40,13 @@ main{
 
 aside{
     grid-area: menu;
-    background-color: rgb(206, 200, 200);
+    background-image: url(/assets/img/vecteezy_abstract-blue-dark-light-gradient-color-background-vector_5528465.jpg);
+
 }
 
 footer{
     grid-area: footer;
-    background-color: #002f6c;
+    background-image: url(/assets/img/fondo-menu.jpg);
     color: white;
 }
 
@@ -55,10 +55,11 @@ footer{
     width: 24px;
 }
 
-main.paginador{
+main .paginador{
     display: flex;
     justify-content: center;
 }
+
 main .motos{
     overflow-y: scroll;
     height: 65vh;
@@ -67,10 +68,61 @@ main .motos{
     gap: 20px;
 }
 
-nav{
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+.button{
+    background-image: url(/assets/img/vecteezy_abstract-blue-dark-light-gradient-color-background-vector_5528465.jpg);
+}
+
+.card-img-top{
+height: 10em;
+}
+
+/*NOTE QUE EL MEDIA QUERY SE ESTA ACTIVANDO A PARTIR DE 992px*/
+@media all and (min-width: 992px){
+    .container_principal{
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-areas: 
+        "nav menu"
+        "nav main"
+        "footer main"
+        ;
+        background-image: url(/assets/img/vecteezy_abstract-blue-dark-light-gradient-color-background-vector_5528465.jpg);
+    }
+    main .motos{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    nav{
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    nav .icon{
+        display: none;
+    }
+    
+    nav .nav_secciones{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+}
+
+/*intento del media query de tablet*/
+@media all and (min-width: 576px){
+    .container_principal{
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr 1fr ;
+        grid-template-areas: 
+        "nav nav"
+        "menu main"
+        "footer footer"
+        ;
+}
+
+main .motos{
+    grid-template-columns: 1fr 1fr;
 }
 
 nav .icon{
@@ -79,22 +131,9 @@ nav .icon{
 
 nav .nav_secciones{
     display: flex;
-    flex-direction: column;
-
+    flex-direction: row;
+/*Intente de todo profesor pero no logre separarlos y mandarlos al fondo para hacer el tipo menu en la tablet :(.*/
+    list-style-type: none;
 }
 
-@media all and (min-width: 576px){
-    .container_principal{
-        grid-template-columns: 15% 85%;
-        grid-template-rows: 1fr 10fr 1fr;
-        grid-template-areas: 
-        "nav" "menu"
-        "nav" "main"
-        "footer" "main"
-        ;
-    }
-    main .motos{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
 }
-
